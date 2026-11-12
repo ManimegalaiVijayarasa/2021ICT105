@@ -1,0 +1,1032 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc 3.10" />
+  <title>README</title>
+  <style type="text/css">
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1
+id="leukemia-classification-using-gene-expression-data-an-exploratory-and-machine-learning-approach">Leukemia
+Classification Using Gene Expression Data: An Exploratory and Machine
+Learning Approach</h1>
+<h2 id="abstract">Abstract</h2>
+<p>Leukemia is a type of blood cancer that affects the production and
+development of blood cells. Acute Lymphoblastic Leukemia (ALL) and Acute
+Myeloid Leukemia (AML) are two major forms of acute leukemia.
+Identifying differences in their gene expression patterns can support
+research into leukemia classification.</p>
+<p>This project analyses the Golub leukemia gene expression dataset
+using R. The dataset contains 7,129 genes across 72 patient samples,
+including 47 ALL and 25 AML samples. Exploratory data analysis,
+differential gene expression analysis and Support Vector Machine (SVM)
+classification were performed. A five-fold cross-validation approach was
+also used to evaluate classification performance.</p>
+<p>The SVM model achieved 93.06% overall accuracy in five-fold
+cross-validation, demonstrating that gene expression patterns can help
+distinguish between ALL and AML samples in this dataset.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Leukemia is a type of cancer that affects blood-forming tissues,
+particularly the bone marrow. It causes the abnormal production of white
+blood cells, which can interfere with the normal functioning of the
+immune system. Acute Lymphoblastic Leukemia (ALL) and Acute Myeloid
+Leukemia (AML) are two major types of acute leukemia. Although both
+affect blood cells, they differ in the types of cells involved and their
+biological characteristics.</p>
+<p>Gene expression analysis is an important approach in bioinformatics
+because it helps researchers examine how genes behave under different
+biological conditions. Gene expression data can reveal patterns that
+distinguish different diseases or disease subtypes. Machine learning
+techniques can use these patterns to classify biological samples.</p>
+<p>This project uses the Golub leukemia gene expression dataset to
+investigate whether gene expression patterns can distinguish between ALL
+and AML samples. The dataset contains expression measurements for 7,129
+genes across 72 samples. Statistical analysis is used to identify genes
+with different expression levels between the two leukemia groups. A
+Support Vector Machine (SVM) model is then developed to classify samples
+based on selected gene expression features.</p>
+<p>The main research question is:</p>
+<p><strong>Can gene expression patterns be used to distinguish between
+Acute Lymphoblastic Leukemia (ALL) and Acute Myeloid Leukemia (AML)
+samples?</strong></p>
+<p>The objectives of this project are:</p>
+<ul>
+<li>To explore and understand the Golub leukemia gene expression
+dataset.</li>
+<li>To examine the distribution and quality of the gene expression
+data.</li>
+<li>To identify genes that show significant expression differences
+between ALL and AML.</li>
+<li>To develop an SVM classification model using selected gene
+expression features.</li>
+<li>To evaluate model performance using a confusion matrix and five-fold
+cross-validation.</li>
+</ul>
+<h2 id="dataset-description">2. Dataset Description</h2>
+<h3 id="dataset-source">2.1 Dataset Source</h3>
+<p>This project uses the Golub leukemia gene expression dataset, which
+is a publicly available biomedical dataset used in leukemia
+classification research. The dataset is accessed through the
+<code>golubEsets</code> Bioconductor package in R.</p>
+<p>The dataset contains gene expression measurements from patient
+samples classified into two leukemia groups: Acute Lymphoblastic
+Leukemia (ALL) and Acute Myeloid Leukemia (AML).</p>
+<h3 id="dataset-structure">2.2 Dataset Structure</h3>
+<p>The dataset contains the following characteristics:</p>
+<table>
+<thead>
+<tr>
+<th>Characteristic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dataset name</td>
+<td>Golub Leukemia Dataset</td>
+</tr>
+<tr>
+<td>Number of genes</td>
+<td>7,129</td>
+</tr>
+<tr>
+<td>Number of samples</td>
+<td>72</td>
+</tr>
+<tr>
+<td>ALL samples</td>
+<td>47</td>
+</tr>
+<tr>
+<td>AML samples</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Data type</td>
+<td>Gene expression measurements</td>
+</tr>
+<tr>
+<td>Data format</td>
+<td>Numerical expression matrix</td>
+</tr>
+<tr>
+<td>Classification target</td>
+<td>ALL or AML</td>
+</tr>
+</tbody>
+</table>
+<p>Each row of the expression matrix represents a gene feature, while
+each column represents a patient sample. The corresponding sample
+information provides the leukemia classification labels and other
+available metadata.</p>
+<h3 id="target-classes">2.3 Target Classes</h3>
+<p>The dataset contains two target classes:</p>
+<ul>
+<li><strong>Acute Lymphoblastic Leukemia (ALL):</strong> This group
+contains 47 patient samples.</li>
+<li><strong>Acute Myeloid Leukemia (AML):</strong> This group contains
+25 patient samples.</li>
+</ul>
+<p>The classification task focuses on distinguishing these two leukemia
+types using their gene expression patterns.</p>
+<h3 id="data-characteristics">2.4 Data Characteristics</h3>
+<p>The expression matrix contains numerical values representing gene
+expression measurements. Some values are negative, which can occur in
+processed microarray expression data and should not automatically be
+treated as missing or invalid values.</p>
+<p>The dataset also includes additional sample metadata, such as sample
+identifiers and biological characteristics. Some metadata fields contain
+missing values. However, the leukemia classification labels required for
+this project are available for all 72 samples.</p>
+<p>The dataset is suitable for this exploratory classification project
+because it provides gene expression measurements together with known ALL
+and AML sample labels.</p>
+<h2 id="data-preprocessing-and-quality-control">3. Data Preprocessing
+and Quality Control</h2>
+<p>Before performing statistical analysis and machine learning, the
+dataset was examined to understand its structure and quality.</p>
+<h3 id="dataset-inspection">3.1 Dataset Inspection</h3>
+<p>The dataset was loaded into R using the <code>golubEsets</code>
+Bioconductor package. The expression matrix and sample metadata were
+extracted separately.</p>
+<p>The expression matrix contained 7,129 genes and 72 patient samples.
+Each sample was matched with its corresponding metadata to ensure that
+the correct leukemia classification label was assigned.</p>
+<h3 id="missing-value-assessment">3.2 Missing Value Assessment</h3>
+<p>Missing values were checked in both the expression matrix and the
+sample metadata.</p>
+<p>The expression matrix contained no missing values. However, several
+metadata variables, including FAB, Date, Gender, and other biological
+characteristics, contained missing observations.</p>
+<p>Since the main analysis uses gene expression values and the ALL/AML
+classification labels, the missing values in unrelated metadata fields
+did not require removing patient samples.</p>
+<h3 id="expression-value-inspection">3.3 Expression Value
+Inspection</h3>
+<p>The minimum and maximum expression values were examined to understand
+the numerical range of the dataset. The observed expression values
+ranged from -28,400 to 71,369.</p>
+<p>Negative expression values were retained because they are part of the
+processed microarray data and do not necessarily represent errors or
+missing observations.</p>
+<h3 id="data-preparation-for-analysis">3.4 Data Preparation for
+Analysis</h3>
+<p>The sample metadata was arranged to match the order of the expression
+matrix columns. This ensured that every expression profile was
+associated with the correct ALL or AML label.</p>
+<p>No unnecessary removal of genes or patient samples was performed at
+this stage. The prepared expression matrix was used for exploratory
+analysis, differential gene expression testing, and machine learning
+classification.</p>
+<h2 id="exploratory-data-analysis-eda">4. Exploratory Data Analysis
+(EDA)</h2>
+<p>Exploratory Data Analysis (EDA) was performed to understand the
+distribution of leukemia samples and the variation in gene expression
+measurements. Several visualisations were generated using the
+<code>ggplot2</code> and <code>pheatmap</code> packages in R.</p>
+<h3 id="distribution-of-leukemia-samples">4.1 Distribution of Leukemia
+Samples</h3>
+<p>The distribution of ALL and AML samples was examined using a bar
+chart.</p>
+<p>The dataset contains 47 ALL samples and 25 AML samples. Therefore,
+ALL represents approximately 65.28% of the dataset, while AML represents
+approximately 34.72%.</p>
+<p>This indicates that the dataset is moderately imbalanced, with more
+ALL samples than AML samples. This class distribution was considered
+when splitting the data and evaluating the classification model.</p>
+<div class="float">
+<img src="figures/leukemia_sample_distribution.png"
+alt="Distribution of ALL and AML Samples" />
+<div class="figcaption">Distribution of ALL and AML Samples</div>
+</div>
+<p><em>Figure 1: Distribution of ALL and AML patient samples.</em></p>
+<h3 id="gene-expression-distribution">4.2 Gene Expression
+Distribution</h3>
+<p>A boxplot was created to examine the distribution of gene expression
+values across individual patient samples. Each box represents the
+expression measurements for one sample and is coloured according to its
+leukemia type.</p>
+<p>The visualisation shows variation in gene expression values among
+patient samples. This variation indicates that gene expression patterns
+are not identical across all samples. Such differences provide a basis
+for further statistical investigation and classification.</p>
+<div class="float">
+<img src="figures/gene_expression_distribution.png"
+alt="Gene Expression Distribution" />
+<div class="figcaption">Gene Expression Distribution</div>
+</div>
+<p><em>Figure 2: Distribution of gene expression values across patient
+samples.</em></p>
+<h3 id="heatmap-of-the-top-50-variable-genes">4.3 Heatmap of the Top 50
+Variable Genes</h3>
+<p>To explore variation across the dataset, the variance of each gene
+was calculated. The 50 genes with the highest expression variance were
+selected for visualisation.</p>
+<p>A heatmap was generated using the selected genes. Expression values
+were standardised for each gene to make differences in expression
+patterns easier to compare. Hierarchical clustering was applied to
+organise genes and samples according to their expression similarity.</p>
+<p>The heatmap reveals variation in gene expression patterns among the
+patient samples. Some samples show similar expression patterns, while
+others display different patterns. This suggests that gene expression
+measurements may contain useful information for distinguishing between
+ALL and AML.</p>
+<div class="float">
+<img src="figures/top_50_variable_genes_heatmap.png"
+alt="Heatmap of Top 50 Variable Genes" />
+<div class="figcaption">Heatmap of Top 50 Variable Genes</div>
+</div>
+<p><em>Figure 3: Heatmap showing the expression patterns of the 50 most
+variable genes across patient samples.</em></p>
+<h3 id="eda-summary">4.4 EDA Summary</h3>
+<p>The exploratory analysis identified differences in sample
+distribution and substantial variation in gene expression measurements.
+The heatmap provided an overview of the expression patterns among
+samples.</p>
+<p>These observations motivated the next stage of the analysis, which
+involved identifying genes with statistically significant expression
+differences between ALL and AML.</p>
+<h2 id="differential-gene-expression-analysis">5. Differential Gene
+Expression Analysis</h2>
+<p>Differential gene expression analysis was performed to identify genes
+that showed different expression levels between ALL and AML samples.
+This analysis helps identify genes that may contribute to the
+differences between the two leukemia groups.</p>
+<h3 id="statistical-method">5.1 Statistical Method</h3>
+<p>A Welch two-sample t-test was applied separately to each of the 7,129
+genes. This test compares the mean expression levels of two independent
+groups without assuming equal variances.</p>
+<p>For each gene, the mean expression in the ALL group and the AML group
+was calculated. The expression difference was defined as:</p>
+<p><strong>Expression Difference = Mean AML Expression − Mean ALL
+Expression</strong></p>
+<p>A positive difference indicates higher average expression in AML,
+while a negative difference indicates higher average expression in
+ALL.</p>
+<p>Since thousands of statistical tests were performed, the
+Benjamini–Hochberg procedure was used to adjust the p-values and control
+the false discovery rate.</p>
+<p>Genes with an adjusted p-value below 0.05 were considered
+statistically significant.</p>
+<h3 id="significant-gene-results">5.2 Significant Gene Results</h3>
+<p>The analysis identified <strong>1,056 statistically significant
+genes</strong> out of the 7,129 genes examined.</p>
+<p>These results indicate that many genes had different average
+expression levels between the ALL and AML samples in this dataset.</p>
+<p>Several genes showed particularly small adjusted p-values, indicating
+strong statistical evidence of differences between the two groups. For
+example, the gene probe <code>X59417_at</code> showed a mean expression
+of 4,198.85 in ALL samples and 1,112.40 in AML samples. Its adjusted
+p-value was approximately 2.11 × 10⁻⁸.</p>
+<p>Another example, <code>X17042_at</code>, showed higher mean
+expression in AML samples (6,495.16) than in ALL samples (1,717.11).</p>
+<p>These identifiers are microarray probe identifiers rather than
+confirmed gene symbols. Therefore, biological functions should not be
+assigned to them without further annotation.</p>
+<h3 id="volcano-plot">5.3 Volcano Plot</h3>
+<p>A volcano plot was generated to visualise the expression differences
+and adjusted p-values for all genes. The horizontal axis represents the
+mean expression difference between AML and ALL, while the vertical axis
+represents the negative logarithm of the adjusted p-value.</p>
+<p>Genes with adjusted p-values below 0.05 are highlighted as
+statistically significant. Points on the right side indicate higher
+average expression in AML, while points on the left indicate higher
+average expression in ALL.</p>
+<div class="float">
+<img src="figures/volcano_plot.png" alt="Volcano Plot" />
+<div class="figcaption">Volcano Plot</div>
+</div>
+<p><em>Figure 4: Volcano plot showing differential gene expression
+between ALL and AML samples.</em></p>
+<h3 id="differential-expression-summary">5.4 Differential Expression
+Summary</h3>
+<p>The differential expression analysis identified a substantial number
+of genes with statistically significant differences between the two
+leukemia groups.</p>
+<p>These findings suggest that the gene expression profiles contain
+information that may help distinguish ALL from AML. The significant gene
+results were also saved as a CSV file for further inspection and
+reproducibility.</p>
+<h2 id="machine-learning-classification-using-svm">6. Machine Learning
+Classification Using SVM</h2>
+<p>A machine learning classification model was developed to investigate
+whether gene expression patterns could distinguish between ALL and AML
+samples. A Support Vector Machine (SVM) was selected for this task
+because it can classify high-dimensional data by identifying decision
+boundaries between different classes.</p>
+<h3 id="training-and-testing-data-split">6.1 Training and Testing Data
+Split</h3>
+<p>The dataset was divided into training and testing sets using a 70:30
+ratio.</p>
+<p>A stratified sampling approach was used to maintain the class
+distribution in both sets. The training set contained 49 samples, while
+the testing set contained 23 samples.</p>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th align="right">ALL Samples</th>
+<th align="right">AML Samples</th>
+<th align="right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training set</td>
+<td align="right">32</td>
+<td align="right">17</td>
+<td align="right">49</td>
+</tr>
+<tr>
+<td>Testing set</td>
+<td align="right">15</td>
+<td align="right">8</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td>Total</td>
+<td align="right">47</td>
+<td align="right">25</td>
+<td align="right">72</td>
+</tr>
+</tbody>
+</table>
+<p>A random seed of 123 was used to make the data split
+reproducible.</p>
+<h3 id="feature-selection">6.2 Feature Selection</h3>
+<p>The original dataset contained 7,129 gene expression features. Using
+all these features with a relatively small number of samples could
+increase model complexity.</p>
+<p>Therefore, feature selection was performed using Welch’s two-sample
+t-test on the training data only. The 50 genes with the smallest
+p-values were selected for model training.</p>
+<p>Feature selection was restricted to the training set to prevent
+information from the testing set from influencing the model-building
+process.</p>
+<h3 id="support-vector-machine-model">6.3 Support Vector Machine
+Model</h3>
+<p>An SVM classifier was developed using the <code>e1071</code> package
+in R.</p>
+<p>A radial basis function (RBF) kernel was selected to allow the model
+to learn nonlinear relationships between gene expression patterns and
+leukemia classes.</p>
+<p>The model was trained using the selected 50 gene features and the
+corresponding ALL and AML labels. The trained model was then used to
+predict the leukemia types of the 23 testing samples.</p>
+<h3 id="confusion-matrix">6.4 Confusion Matrix</h3>
+<p>The predictions were evaluated using a confusion matrix.</p>
+<table>
+<thead>
+<tr>
+<th>Actual Class</th>
+<th align="right">Predicted ALL</th>
+<th align="right">Predicted AML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALL</td>
+<td align="right">14</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>AML</td>
+<td align="right">0</td>
+<td align="right">8</td>
+</tr>
+</tbody>
+</table>
+<p>The model correctly classified 14 out of 15 ALL samples and all 8 AML
+samples. Only one ALL sample was incorrectly classified as AML.</p>
+<h3 id="classification-performance">6.5 Classification Performance</h3>
+<p>The classification accuracy was calculated as:</p>
+<p><strong>Accuracy = Correct Predictions / Total
+Predictions</strong></p>
+<p>The model achieved an accuracy of:</p>
+<p><strong>Accuracy = 22 / 23 × 100 = 95.65%</strong></p>
+<p>The following table summarises the classification metrics for each
+class.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th align="right">Precision</th>
+<th align="right">Recall</th>
+<th align="right">F1-Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALL</td>
+<td align="right">100.00%</td>
+<td align="right">93.33%</td>
+<td align="right">96.55%</td>
+</tr>
+<tr>
+<td>AML</td>
+<td align="right">88.89%</td>
+<td align="right">100.00%</td>
+<td align="right">94.12%</td>
+</tr>
+</tbody>
+</table>
+<p>The balanced accuracy was 96.67%.</p>
+<h3 id="interpretation">6.6 Interpretation</h3>
+<p>The test results show that the SVM model performed well in
+distinguishing between ALL and AML samples in this particular train-test
+split.</p>
+<p>The model correctly identified all eight AML testing samples and 14
+of the 15 ALL samples. The precision and recall values also indicate
+good classification performance for both classes.</p>
+<p>However, the testing set contained only 23 samples. Therefore, the
+95.65% accuracy should not be considered a reliable estimate of
+performance on all future samples. Further evaluation using
+cross-validation was performed to obtain a more comprehensive
+assessment.</p>
+<h2 id="model-evaluation-using-five-fold-cross-validation">7. Model
+Evaluation Using Five-Fold Cross-Validation</h2>
+<p>To obtain a more comprehensive evaluation of the SVM classifier,
+five-fold cross-validation was performed. This technique divides the
+dataset into five approximately equal parts, known as folds.</p>
+<p>During each iteration, four folds were used for training and the
+remaining fold was used for testing. This process was repeated five
+times so that every sample was used for testing once.</p>
+<p>For each fold, the top 50 genes were selected using the training data
+only. An SVM classifier with a radial basis function kernel was then
+trained and evaluated on the corresponding test fold. This approach
+helped prevent information leakage from the test fold during feature
+selection.</p>
+<h3 id="cross-validation-results">7.1 Cross-Validation Results</h3>
+<p>The accuracy obtained from each fold is presented below.</p>
+<table>
+<thead>
+<tr>
+<th>Fold</th>
+<th align="right">Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fold 1</td>
+<td align="right">86.67%</td>
+</tr>
+<tr>
+<td>Fold 2</td>
+<td align="right">93.33%</td>
+</tr>
+<tr>
+<td>Fold 3</td>
+<td align="right">85.71%</td>
+</tr>
+<tr>
+<td>Fold 4</td>
+<td align="right">100.00%</td>
+</tr>
+<tr>
+<td>Fold 5</td>
+<td align="right">100.00%</td>
+</tr>
+<tr>
+<td><strong>Mean Accuracy</strong></td>
+<td align="right"><strong>93.14%</strong></td>
+</tr>
+<tr>
+<td><strong>Standard Deviation</strong></td>
+<td align="right"><strong>6.91%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The results show that the model achieved different accuracy values
+across the five folds. Two folds achieved 100% accuracy, while the
+remaining folds achieved accuracies above 85%.</p>
+<h3 id="overall-confusion-matrix">7.2 Overall Confusion Matrix</h3>
+<p>The predictions from all five testing folds were combined to produce
+an overall confusion matrix.</p>
+<table>
+<thead>
+<tr>
+<th>Actual Class</th>
+<th align="right">Predicted ALL</th>
+<th align="right">Predicted AML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALL</td>
+<td align="right">46</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>AML</td>
+<td align="right">4</td>
+<td align="right">21</td>
+</tr>
+</tbody>
+</table>
+<p>Out of the 72 samples, the model correctly classified 67 samples and
+incorrectly classified 5 samples.</p>
+<p>The model correctly identified 46 ALL samples and 21 AML samples.
+However, four AML samples were incorrectly classified as ALL, while one
+ALL sample was incorrectly classified as AML.</p>
+<h3 id="overall-classification-performance">7.3 Overall Classification
+Performance</h3>
+<p>The overall accuracy was calculated using the combined predictions
+from all five folds.</p>
+<p><strong>Overall Accuracy = 67 / 72 × 100 = 93.06%</strong></p>
+<p>The following table presents the classification performance for each
+leukemia class.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th align="right">Precision</th>
+<th align="right">Recall</th>
+<th align="right">F1-Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALL</td>
+<td align="right">92.00%</td>
+<td align="right">97.87%</td>
+<td align="right">94.85%</td>
+</tr>
+<tr>
+<td>AML</td>
+<td align="right">95.45%</td>
+<td align="right">84.00%</td>
+<td align="right">89.36%</td>
+</tr>
+</tbody>
+</table>
+<p>The balanced accuracy was 90.94%.</p>
+<h3 id="interpretation-1">7.4 Interpretation</h3>
+<p>The five-fold cross-validation results indicate that the SVM model
+achieved an overall accuracy of 93.06% on the Golub dataset.</p>
+<p>The model showed higher recall for ALL samples (97.87%) than for AML
+samples (84.00%). This means that it correctly identified most ALL
+samples, while some AML samples were classified as ALL.</p>
+<p>The mean fold accuracy of 93.14% also indicates generally strong
+classification performance across the five folds. However, the standard
+deviation of 6.91% shows that performance varied between folds.</p>
+<p>Although these results demonstrate that gene expression features can
+help distinguish between ALL and AML samples, the dataset contains only
+72 samples. Therefore, the findings should be interpreted cautiously and
+should not be considered evidence of clinical diagnostic
+performance.</p>
+<h2 id="discussion">8. Discussion</h2>
+<p>The main objective of this project was to investigate whether gene
+expression patterns could distinguish between Acute Lymphoblastic
+Leukemia (ALL) and Acute Myeloid Leukemia (AML) samples. The results
+from exploratory data analysis, differential gene expression analysis,
+and machine learning classification provide evidence that gene
+expression measurements contain useful information for distinguishing
+these two leukemia groups.</p>
+<h3 id="findings-from-exploratory-data-analysis">8.1 Findings from
+Exploratory Data Analysis</h3>
+<p>The exploratory analysis showed that the dataset contained 47 ALL
+samples and 25 AML samples. This difference in sample distribution
+indicates a moderate class imbalance, which was considered during the
+model evaluation.</p>
+<p>The gene expression distribution boxplot demonstrated variation in
+expression measurements across patient samples. In addition, the heatmap
+of the 50 most variable genes revealed differences in expression
+patterns among samples. These observations suggest that gene expression
+profiles contain potentially useful features for leukemia
+classification.</p>
+<h3 id="findings-from-differential-gene-expression-analysis">8.2
+Findings from Differential Gene Expression Analysis</h3>
+<p>The differential gene expression analysis identified 1,056 genes with
+statistically significant expression differences between ALL and AML
+samples after Benjamini–Hochberg adjustment.</p>
+<p>The results showed that some genes had higher average expression in
+ALL, while others had higher average expression in AML. For example, the
+probe <code>X59417_at</code> showed higher mean expression in ALL,
+whereas <code>X17042_at</code> showed higher mean expression in AML.</p>
+<p>These findings demonstrate that the two leukemia groups have
+different gene expression profiles in this dataset. However, further
+gene annotation and biological investigation would be required to
+understand the specific biological functions of the identified
+probes.</p>
+<h3 id="performance-of-the-svm-classifier">8.3 Performance of the SVM
+Classifier</h3>
+<p>The SVM classifier achieved 95.65% accuracy using the 70/30
+train-test split. However, a single train-test split may produce results
+that depend on the particular samples selected for testing.</p>
+<p>To obtain a more comprehensive evaluation, five-fold cross-validation
+was also performed. The model achieved 93.06% overall accuracy, with a
+mean fold accuracy of 93.14%.</p>
+<p>The cross-validation results showed that the model performed better
+in identifying ALL samples, with a recall of 97.87%, compared with
+84.00% recall for AML samples. This indicates that some AML samples were
+more difficult for the classifier to distinguish correctly.</p>
+<p>Overall, the classification results suggest that selected gene
+expression features can provide useful information for distinguishing
+between ALL and AML samples.</p>
+<h3 id="limitations-of-the-study">8.4 Limitations of the Study</h3>
+<p>Although the results were promising, several limitations should be
+considered:</p>
+<ul>
+<li><strong>Small dataset:</strong> The analysis used only 72 samples,
+which limits the ability to generalise the findings to larger and more
+diverse patient populations.</li>
+<li><strong>Class imbalance:</strong> The dataset contained more ALL
+samples than AML samples, which may influence classification
+performance.</li>
+<li><strong>Limited feature selection:</strong> The analysis selected
+the top 50 genes for classification. Other feature selection methods or
+different numbers of genes may produce different results.</li>
+<li><strong>Model selection:</strong> Only an SVM classifier with a
+radial basis function kernel was evaluated. Other machine learning
+algorithms may produce different results.</li>
+<li><strong>Limited validation:</strong> The study used one five-fold
+cross-validation partition. Repeated cross-validation and external
+validation using independent datasets would provide stronger
+evidence.</li>
+<li><strong>Gene annotation:</strong> The selected features are
+microarray probe identifiers. Additional annotation is required to
+identify their corresponding genes and biological functions.</li>
+</ul>
+<p>The model developed in this project is intended for academic research
+and educational purposes only. It is not a clinical diagnostic system
+and should not be used to make medical decisions.</p>
+<h2 id="conclusion-and-future-work">9. Conclusion and Future Work</h2>
+<h3 id="conclusion">9.1 Conclusion</h3>
+<p>This project investigated the use of gene expression data to
+distinguish between Acute Lymphoblastic Leukemia (ALL) and Acute Myeloid
+Leukemia (AML). The Golub leukemia dataset, containing 7,129 genes and
+72 patient samples, was analysed using R and several bioinformatics and
+machine learning techniques.</p>
+<p>Exploratory data analysis was performed to understand the sample
+distribution and gene expression patterns. Differential gene expression
+analysis identified 1,056 statistically significant genes after
+multiple-testing correction, demonstrating differences in gene
+expression between the two leukemia groups.</p>
+<p>A Support Vector Machine classifier was developed using the 50
+selected gene features. The model achieved 95.65% accuracy using a 70/30
+train-test split. Five-fold cross-validation produced an overall
+accuracy of 93.06%, with a mean fold accuracy of 93.14%.</p>
+<p>These findings suggest that gene expression patterns can provide
+useful information for distinguishing between ALL and AML samples in the
+Golub dataset. The project also demonstrates how statistical analysis
+and machine learning can be applied to biomedical data to investigate
+classification problems.</p>
+<p>However, the relatively small dataset and limited validation mean
+that the results should be interpreted cautiously. The developed model
+is intended for academic research purposes and is not suitable for
+clinical diagnosis.</p>
+<h3 id="future-work">9.2 Future Work</h3>
+<p>Several improvements could be considered in future research:</p>
+<ul>
+<li><strong>Larger datasets:</strong> Evaluate the classification
+approach using larger and independent leukemia gene expression
+datasets.</li>
+<li><strong>Additional machine learning models:</strong> Compare SVM
+with Random Forest, Logistic Regression, and other classification
+algorithms.</li>
+<li><strong>Feature selection improvements:</strong> Investigate
+alternative feature selection methods to identify the most informative
+genes.</li>
+<li><strong>Gene annotation:</strong> Map the selected microarray probe
+identifiers to recognised gene symbols and investigate their biological
+functions.</li>
+<li><strong>Repeated cross-validation:</strong> Perform repeated
+stratified cross-validation to obtain more stable performance
+estimates.</li>
+<li><strong>External validation:</strong> Evaluate the final model using
+an independent dataset that was not involved in model development.</li>
+<li><strong>Model optimisation:</strong> Explore different SVM
+parameters and kernel configurations to investigate whether
+classification performance can be improved.</li>
+</ul>
+<h2 id="reproducibility">10. Reproducibility</h2>
+<p>Reproducibility is important in bioinformatics research because it
+allows other researchers to repeat the analysis and verify the
+results.</p>
+<p>This project was implemented using R and RStudio. The Golub leukemia
+dataset was obtained through the <code>golubEsets</code> Bioconductor
+package. The analysis code is provided in the <code>code</code>
+directory.</p>
+<h3 id="software-and-packages">10.1 Software and Packages</h3>
+<p>The following software and R packages were used:</p>
+<table>
+<thead>
+<tr>
+<th>Software / Package</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>Statistical computing and analysis</td>
+</tr>
+<tr>
+<td>RStudio</td>
+<td>R development environment</td>
+</tr>
+<tr>
+<td>golubEsets</td>
+<td>Accessing the Golub leukemia dataset</td>
+</tr>
+<tr>
+<td>Biobase</td>
+<td>Extracting expression data and metadata</td>
+</tr>
+<tr>
+<td>tidyverse</td>
+<td>Data manipulation and visualisation</td>
+</tr>
+<tr>
+<td>pheatmap</td>
+<td>Generating gene expression heatmaps</td>
+</tr>
+<tr>
+<td>e1071</td>
+<td>Support Vector Machine classification</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-reproduce-the-analysis">10.2 How to Reproduce the
+Analysis</h3>
+<p>Follow these steps to reproduce the project:</p>
+<ol style="list-style-type: decimal">
+<li>Install R and RStudio.</li>
+<li>Install the required R packages.</li>
+<li>Clone or download this GitHub repository.</li>
+<li>Open the <code>Leukemia_Classification.Rproj</code> file in
+RStudio.</li>
+<li>Open <code>code/leukemia_analysis.R</code>.</li>
+<li>Run the script from beginning to end.</li>
+</ol>
+<p>The required packages can be installed using:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;pheatmap&quot;</span>, <span class="st">&quot;e1071&quot;</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;BiocManager&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(<span class="st">&quot;golubEsets&quot;</span>, <span class="st">&quot;Biobase&quot;</span>))</span></code></pre></div>
+<p>The analysis script loads the dataset, performs quality checks,
+generates visualisations, identifies differentially expressed genes,
+trains the SVM classifier, and performs five-fold cross-validation.</p>
+<p>Generated figures are stored in the <code>figures</code> directory,
+while the analysis results are saved in the <code>output</code>
+directory.</p>
+<h2 id="references">11. References</h2>
+<ol style="list-style-type: decimal">
+<li><p>Golub, T. R., Slonim, D. K., Tamayo, P., et al. (1999). Molecular
+classification of cancer: Class discovery and class prediction by gene
+expression monitoring. <em>Science, 286</em>(5439), 531–537.
+https://doi.org/10.1126/science.286.5439.531</p></li>
+<li><p>Bioconductor. (n.d.). <em>golubEsets: Gene expression datasets
+for leukemia research</em>.
+https://bioconductor.org/packages/release/data/experiment/html/golubEsets.html</p></li>
+<li><p>Meyer, D., Dimitriadou, E., Hornik, K., Weingessel, A., and
+Leisch, F. (2025). <em>e1071: Misc Functions of the Department of
+Statistics, Probability Theory Group</em>. R package.
+https://CRAN.R-project.org/package=e1071</p></li>
+<li><p>R Core Team. (2026). <em>R: A language and environment for
+statistical computing</em>. R Foundation for Statistical Computing,
+Vienna, Austria. https://www.r-project.org/</p></li>
+<li><p>Wickham, H., Averick, M., Bryan, J., et al. (2019). Welcome to
+the tidyverse. <em>Journal of Open Source Software, 4</em>(43), 1686.
+https://doi.org/10.21105/joss.01686</p></li>
+</ol>
+</body>
+</html>
