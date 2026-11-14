@@ -154,7 +154,7 @@ A Welch two-sample t-test was applied separately to each of the 7,129 genes. Thi
 
 For each gene, the mean expression in the ALL group and the AML group was calculated. The expression difference was defined as:
 
-**Expression Difference = Mean AML Expression − Mean ALL Expression**
+**Expression Difference = Mean AML Expression - Mean ALL Expression**
 
 A positive difference indicates higher average expression in AML, while a negative difference indicates higher average expression in ALL.
 
@@ -168,7 +168,7 @@ The analysis identified **1,056 statistically significant genes** out of the 7,1
 
 These results indicate that many genes had different average expression levels between the ALL and AML samples in this dataset.
 
-Several genes showed particularly small adjusted p-values, indicating strong statistical evidence of differences between the two groups. For example, the gene probe `X59417_at` showed a mean expression of 4,198.85 in ALL samples and 1,112.40 in AML samples. Its adjusted p-value was approximately 2.11 × 10⁻⁸.
+Several genes showed particularly small adjusted p-values, indicating strong statistical evidence of differences between the two groups. For example, the gene probe `X59417_at` showed a mean expression of 4,198.85 in ALL samples and 1,112.40 in AML samples. Its adjusted p-value was approximately 2.11 × 10-8.
 
 Another example, `X17042_at`, showed higher mean expression in AML samples (6,495.16) than in ALL samples (1,717.11).
 
