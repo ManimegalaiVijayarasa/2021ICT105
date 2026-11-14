@@ -10,3 +10,5 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+# Local dataset (loaded from golubEsets)
+data/*.rds
